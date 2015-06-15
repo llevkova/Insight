@@ -1,0 +1,108 @@
+\special{! TeXDict begin /landplus90{true}store end }
+\documentclass{mine}
+
+\begin{document}
+
+
+\titlepage{Virtual Wine Taster}
+{
+\begin{center}
+    \incs{T51}{15cm}
+\end{center}
+\name{Ludmila Levkova}\\
+\imp{Insight Data Science}\\
+}{June 12, 2015}
+
+\begin{slide}{Problem}
+    \vspace{3cm}
+    \begin{itemize}
+        \item{\bl{Can we predict how people will rate a certain type of wine (from 0 to 10) based on its chemical properties?}}
+        \vspace{1cm}
+        \item{Useful for producers/sellers of wine. They can improve their product/decide to buy specific wines
+              based on a taste prediction. The model may be able to make a specific recommendation for enhancing the
+              taste of some wines.}
+       \vspace{1cm}
+       \item{The data base has "blind" assesments of wine taste (0-10) and 11 chemical properties for each wine (alcohol
+           content, sugar content, sulphates, pH, etc.).}
+    \end{itemize}
+\end{slide}
+
+\begin{slide}{Scatter plot (Red wine)}
+    \begin{center}
+        \incs{AL_Q.eps}{22cm}
+    \end{center}
+\end{slide}
+
+\begin{slide}{Scatter plot (Red wine)}
+    \begin{center}
+        \incs{VA_Q.eps}{22cm}
+    \end{center}
+\end{slide}
+
+\begin{slide}{Scatter plot (Red wine)}
+    \begin{center}
+        \incs{SF_Q.eps}{22cm}
+    \end{center}
+\end{slide}
+
+\begin{slide}{Scatter plot (Red wine)}
+    \begin{center}
+        \incs{TSD_Q.eps}{22cm}
+    \end{center}
+\end{slide}
+
+\begin{slide}{Scatter plot (Red wine)}
+    \begin{center}
+        \incs{CA_Q.eps}{22cm}
+    \end{center}
+\end{slide}
+
+
+\begin{slide}{Methods - Supervised Learning}
+    \vspace{3cm}
+    \begin{itemize}
+        \item{Multiple regression over the available chemical properties (tried)}
+        \vspace{1cm}
+    \item{SVM classifier (tried)}
+        \vspace{1cm}
+        \item{Neural Networks}
+    \end{itemize}
+\end{slide}
+
+\begin{slide}{Multiple Regression}
+    \tiny
+    \begin{verbatim}
+===================================================================================================================================
+                         m1        m2        m3        m4        m5        m6        m7        m8        m9        m10       m11   
+-----------------------------------------------------------------------------------------------------------------------------------
+(Intercept)            5.636***  5.636***  5.636***  5.636***  5.636***  5.636***  5.636***  5.636***  5.636***  5.636***  5.636***
+                      (0.018)   (0.017)   (0.016)   (0.016)   (0.016)   (0.016)   (0.016)   (0.016)   (0.016)   (0.016)   (0.016)  
+I(alcohol)             0.385***  0.334***  0.330***  0.315***  0.295***  0.301***  0.307***  0.286***  0.312***  0.293***  0.294***
+                      (0.018)   (0.017)   (0.017)   (0.017)   (0.018)   (0.018)   (0.018)   (0.022)   (0.024)   (0.028)   (0.028)  
+volatile.acidity                -0.248*** -0.219*** -0.215*** -0.204*** -0.194*** -0.210*** -0.204*** -0.203*** -0.201*** -0.194***
+                                (0.017)   (0.017)   (0.017)   (0.017)   (0.018)   (0.021)   (0.021)   (0.021)   (0.021)   (0.022)  
+sulphates                                  0.115***  0.121***  0.155***  0.150***  0.150***  0.155***  0.152***  0.157***  0.155***
+                                          (0.017)   (0.017)   (0.019)   (0.019)   (0.019)   (0.019)   (0.019)   (0.019)   (0.019)  
+total.sulfur.dioxide                                -0.074*** -0.076*** -0.071*** -0.065*** -0.063*** -0.072*** -0.075*** -0.107***
+                                                    (0.017)   (0.017)   (0.017)   (0.017)   (0.017)   (0.018)   (0.018)   (0.024)  
+chlorides                                                     -0.080*** -0.082*** -0.074*** -0.075*** -0.086*** -0.086*** -0.088***
+                                                              (0.018)   (0.018)   (0.019)   (0.019)   (0.020)   (0.020)   (0.020)  
+fixed.acidity                                                            0.041*    0.064**   0.095**   0.028     0.054     0.044   
+                                                                        (0.017)   (0.024)   (0.030)   (0.041)   (0.045)   (0.045)  
+citric.acid                                                                       -0.040    -0.039    -0.044    -0.045    -0.036   
+                                                                                  (0.028)   (0.028)   (0.028)   (0.028)   (0.029)  
+density                                                                                     -0.048    -0.008    -0.041    -0.034   
+                                                                                            (0.029)   (0.033)   (0.041)   (0.041)  
+pH                                                                                                    -0.068*   -0.056    -0.064*  
+                                                                                                      (0.028)   (0.029)   (0.030)  
+residual.sugar                                                                                                   0.028     0.023   
+                                                                                                                (0.021)   (0.021)  
+free.sulfur.dioxide                                                                                                        0.046*  
+                                                                                                                          (0.023)
+\end{verbatim}
+
+\end{slide}
+
+
+\end{document}
+
