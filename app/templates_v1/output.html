@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+<style>
+#rcorners1 {
+    border-radius: 25px;
+    padding: 40px; 
+}
+
+div.background
+{
+  background-color: red;
+  border: 2px solid black;
+}
+div.transbox
+{
+  margin-top: 250px;
+  margin-left: 200px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+div.transbox1
+{
+  margin-top: 250px;
+  margin-right: 50px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  opacity:0.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+div.transbox p
+{
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vrtual Wine Taster</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/full.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="transparent">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Put your page content here! -->
+    <br><br><br><br> 
+    <div class = "transbox" style="float:left; width:20%;" id="rcorners1">
+      <h1 style="color:maroon;font-weight:bold;">Enter the chemical properties of your wine below</h1>
+      <form  action="/output" method="GET">
+        <div class="form-group" style="center">
+          <label for="AL" >Alcohol:</label><br>
+          <input type="value" id="AL" name='AL' placeholder="e.g. 10% of volume"> <br><br>
+          <label for="VA"> Volatile Acidity:</label><br> 
+          <input type="value" id="VA" name='VA' placeholder="e.g. 0.5 g/l"> <br><br>
+          <label for="SPH"> Sulfates:</label><br>
+          <input type="value" id="SPH" name='SPH' placeholder="e.g. 0.5 g/l"><br><br>
+          <label for="TSD"> Total Sulfur Dioxide:</label><br>
+          <input type="value" id="TSD" name='TSD' placeholder="e.g. 50 mg/l"><br><br>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-default btn-lg" style="color:maroon;font-weight:bold;">Taste this wine!</button>
+        </div>
+      </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <div class="transbox1" style="float:right; width:60%;" id="rcorners1">
+        <h1 style="color:maroon;font-weight:bold;">Results:</h1><br>
+          <p class="lead" style="font-size:30px;">On a 0 to 100 scale your wine tastes like {{ taste }}! </p>
+     <br>
+     <h1 style="color:maroon;font-weight:bold;">Recommendations:</h1>
+     <p class="lead" style="font-size:30px;">{{ recommendation }}</p>
+    </div>
+   
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
